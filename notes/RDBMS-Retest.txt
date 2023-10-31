@@ -1,0 +1,82 @@
+Question 11.
+
+DELETE - In DML command DELETE command used to delete the records of the existing data in the table 
+
+DROP - In DDL command DROP command used to delete the database objects such as tables,etc
+
+
+Question 12.
+
+
+CREATE TABLE Department (
+
+	Dept_Id INT PRIMARY KEY,
+	Dept_Name Varchar(50),
+	Location Varchar(50)
+);
+
+
+Question 13.
+
+
+CREATE TABLE Emp (
+
+	Emp_No INT PRIMARY KEY,
+	Emp_Name Varchar(50),
+	Job Varchar(50),
+	Manager_No INT,
+	Date_Of_Joining DATE,
+	Salary INT,
+	Dept_No INT FOREIGN KEY
+);
+
+Question 14.
+
+INSERT into Department (Dept_Id, Dept_Name, Location ) values (100 , "Police" , "Sholinganallur");
+
+Question 15.
+
+INSERT into 
+	Emp (Emp_No, Emp_Name, Job, Manage_No, Date_of_Joining, Salary, Dept_No) 
+	values (001, "Devanathan","Engineer",100,"19-08-2023",31000,10);
+
+Question 16.
+
+SELECT Emp_Name, Date_Of_Joining FROM Emp;
+
+Question 17.
+
+SELECT Date_Of_Joining, Emp_Name FROM Emp;
+
+Question 18.
+
+SELECT Emp_Name AS Employee FROM Emp where Salary > 10,000;
+
+Question 19.
+
+SELECT Emp_Name AS Employee FROM Emp where Job NOT IN ('clerk',Salesman') ORDER BY Emp_Name;
+
+Question 20.
+
+SELECT Emp_Name AS Employee FROM Emp Where Emp_Name LIKE "%s%";
+
+Question 21.
+
+SELECT Emp_Name AS Name, Salary AS Salary FROM Emp Where salary  <  20000;
+
+Question 22.
+
+SELECT Emp_Name as Name FROM Emp Where Date_Of_Joining BETWEEN "01-01-2000" AND "31-12-2006";
+
+Question 23.
+
+SELECT Emp_Name as Name, Job FROM Emp Where Dept_No BETWEEN 10 AND 20;
+
+Question 24.
+
+SELECT TOP 5 Emp_Name as Name FROM Emp ORDERBY DESC;
+
+Question 25.
+
+ SELECT Emp_No AS Eno, Emp_Name AS Name, ManagerName FROM Emp INNER JOIN (table with manager name) ON Emp.Manager_No == managerTable.Manager_No
+

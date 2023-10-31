@@ -1,0 +1,13 @@
+First Name <h2>{{this.uData.firstName +" " +this.uData.lastName | lowercase}}</h2>
+last Name <h2>{{this.uData.lastName | uppercase}}</h2>
+firstName &nbsp; <h3>{{this.uData.firstName + this.uData.lastName | slice:4:12}}</h3>
+Joined Date <h3>{{this.uData.dateOfJoining | date}}</h3>
+Joined full Date <h3>{{this.uData.dateOfJoining | date:'fullDate'}}</h3>
+short joined date <h3>{{this.uData.dateOfJoining | date:'shortDate'}}</h3>
+Format Date <h3>{{this.uData.dateOfJoining | date:'dd-M-yy'}}</h3>
+Joined full Time <h3>{{this.uData.dateOfJoining | date:'fullTime'}}</h3>
+short joined time <h3>{{this.uData.dateOfJoining | date:'shortTime'}}</h3>
+Currency <h3>{{this.uData.salary | currency}}</h3>
+Currency <h3>{{this.uData.salary | currency:'INR'}}</h3>
+
+<router-outlet></router-outlet>

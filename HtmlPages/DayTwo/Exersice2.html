@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Today's Exersice</title>
+    </head>
+    <body>
+        <center>
+        <b>User information</b><br><br>
+        <form action="#">
+            <label for="fname">First name</label>
+            <input type="text" name="firstname" onsubmit="updateFirstName()" placeholder="Enter your first name" required maxlength="30" minlength="5" />
+            <br><br>
+            <label for="fname">Last name</label>
+            <input type="text" name="lastname" placeholder="Enter your last name" required maxlength="30" minlength="5" />
+            <br><br>
+            <label>Mobile</label>
+            <input type="number" required min="6000000000" max="10000000000" name="MobileNumber" size="1000"/><br><br>
+            <label>Your Email</label><input type="email" name="emailID" minlength="6"/><br><br>
+            <input type="submit" value="Add" />&nbsp;&nbsp; 
+            <input type="button" value="Get"/>
+        
+        <table cellspacing="5px" border="5px" style="border-style: groove;border-color: chocolate; border-radius: 4px;"  align="center" width="500px" height="500px">
+            <tr align="center" bgcolor="Black"><td colspan="3"><font color="White"> Official statistics</font></td></tr>
+            <tr align="center"><td>FirstName</td><td>LastName</td><td>Address</td></tr>
+            <tr align="center"><td><input type="text" name="fnameval"  readonly /></td><td>11000</td><td>7000</td></tr>
+        </table>
+        <script>
+            function updateFirstName(){
+                document.forms[0].fnameval.value = document.forms[0].firstname.value;
+            }
+        </script>
+        </form>
+        </center>
+    </body>
+</html>

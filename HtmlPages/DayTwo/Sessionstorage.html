@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Session Storage</title>
+</head>
+    <center>
+    <b>User information</b><br><br>
+    <form action="#" >
+        <label> EmployeeID</label>
+        <input type="text" name="employeeID" value="100"/>
+        <br><br>
+        <label for="fname">First name</label>
+        <input type="text" name="firstname" placeholder="Enter your name" required maxlength="30" minlength="5" />
+        <br><br>
+        <label>Age</label>
+        <input type="number" min="18" max="60" name="empAge" size="20"/>
+        <br><br>
+        <input type="submit" onclick="saveData()" name="Save" />&nbsp;&nbsp; 
+        <input type="reset" value="reset"/>
+    </form>
+<script>
+    function saveData()
+    {
+        var v = document.forms[0].employeeID.value;
+        var a = document.forms[0].firstname.value;
+        var b = document.forms[0].empAge.value;
+        console.log(v+"\t\t"+a+"\t\t"+b);
+        sessionStorage.employeeID=v;
+        sessionStorage.firstname=a;
+        sessionStorage.empAge=b;
+    }
+</script>
+</center>
+</html>

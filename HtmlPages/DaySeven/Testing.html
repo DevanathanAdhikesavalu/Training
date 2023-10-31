@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ChkusedIdPass(){
+            var userId = document.getElementById("text1").value;
+            var userPwd = document.getElementById("text2").value;
+            if(userId!=userPwd){
+                alert("Welcome");
+            }
+            else{
+                alert("userID and Password should not be same");
+            }
+        }
+        function Display(){
+            var selected = document.getElementById("option");
+            alert("your Selected option is : "+ selected.options[selected.selectedIndex].value);
+        }
+        function ChangeColor(){
+            var id1 = document.getElementsByClassName("deva");
+            for(var i=0;i<id1.length;i++){
+                id1.style.color="red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="text1" placeholder="User Name"/><br><br>
+    <input type="password" id="text2" placeholder="Enter your Password" /><br><br>
+    <input type="button" id="button" value="LogIN" onclick="ChkusedIdPass()"/><br><br>
+
+
+    <select id="option">
+        <option value="Devanathan">Devanathan</option>
+        <option value="Keerthi">Keerthi</option>
+        <option value="Balasuburamani">Bala</option>
+    </select>
+
+    <button id="button2" onclick="Display()">Done</button>
+
+    <p class="deva">this is line 1</p>
+    <p class="deva">this is line 1</p>
+    <p >this is line 1</p>
+    <p>this is line 1</p>
+    <p>this is line 1</p>
+    <p>this is line 1</p>
+    <button id="button2" onclick="ChangeColor()">Done</button>
+
+</body>
+</html>

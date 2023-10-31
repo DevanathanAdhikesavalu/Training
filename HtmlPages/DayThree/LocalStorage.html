@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+</head>
+<body>
+    <center>
+        <b>User information</b><br><br>
+        <form action="#">
+            <label for="employeeID">Employee ID</label>
+            <input type="text" id="employeeID" name="employeeID" value="100"/><br><br>
+
+            <label for="firstname">First name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter your name" required maxlength="30" minlength="5" /><br><br>
+
+            <label for="empAge">Age</label>
+            <input type="number" id="empAge" min="18" max="60" name="empAge" size="20"/><br><br>
+
+            <fieldset>
+                <legend>Select Gender</legend>
+                <input type="radio" id="male" name="Gender" value="Male"/>Male &nbsp;&nbsp;
+                <input type="radio" id="female" name="Gender" value="Female"/>Female<br>
+            </fieldset><br><br>
+
+            <fieldset>
+                <legend>Hobbies</legend>
+                <input type="checkbox" name="Hobbies" value="Cricket"/>Cricket<br>
+                <input type="checkbox" name="Hobbies" value="Music"/>Music<br>
+                <input type="checkbox" name="Hobbies" value="Football"/>Football<br>
+            </fieldset>
+
+            <input type="button" onclick="saveData()" value="Save"/>&nbsp;&nbsp; 
+            <input type="reset" value="Reset"/>
+        </form>
+    </center>
+
+    <script>
+        function saveData() {
+            var v = document.getElementById('employeeID').value;
+            var a = document.getElementById('firstname').value;
+            var b = document.getElementById('empAge').value;
+            var gender = document.querySelector('input[name="Gender"]:checked');
+            var selectedHobbies = [];
+
+            var checkboxes = document.getElementsByName('Hobbies');
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    selectedHobbies.push(checkboxes[i].value);
+                }
+            }
+
+            console.log(v + "\t\t" + a + "\t\t" + b);
+
+            localStorage.setItem('employeeID', v);
+            localStorage.setItem('firstname', a);
+            localStorage.setItem('empAge', b);
+            localStorage.setItem('Gender', gender ? gender.value : 'Not specified');
+            localStorage.setItem('Hobbies', JSON.stringify(selectedHobbies));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var age=prompt("Enter your age",18);
+    try
+   {
+        if(age >=18 && age <=60)
+        {
+            document.writeln("You an apply for this job...");
+        }
+        else if(age >60)
+        {
+            throw "Take rest.......";
+        }
+        else
+        {
+            throw "wait until 18";
+        }
+   }
+    catch(e)
+    {
+        var divTag=document.getElementById("d1");
+        divTag.innerHTML=e;
+    }
+    finally{
+              document.writeln("<br>now register for an email");
+               window.open("http://mail.yahoo.com","_self");
+               //_self - open yahoo.com in same tab
+               //_blank or _target - open yahoo in a new tab
+}
+</script>
+<body>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+    {
+        "imageUrl": "../../../assets/images/suzumecard.jpg",
+        "title": "Movie #1 title",
+        "description": "Movie #1 Description"
+    },
+    {
+        "imageUrl": "../../../assets/images/suzumecard.jpg",
+        "title": "Movie #1 title",
+        "description": "Movie #1 Description"
+    },
+    {
+        "imageUrl": "../../../assets/images/suzumecard.jpg",
+        "title": "Movie #1 title",
+        "description": "Movie #1 Description"
+    }
+]

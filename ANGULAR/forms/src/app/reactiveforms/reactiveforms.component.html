@@ -1,0 +1,32 @@
+
+<!-- -->
+<!-- nGMoudule is not used -->
+
+<h2>Enter users's Data</h2>
+<form [formGroup]="userForm" (ngSubmit)='addUser()'>
+  FirstName <input type="text" name="firstName" formControlName="firstName" /><br>
+  LastName <input type="text" name="lastName" formControlName="lastName"/><br>
+  Join Date <input type="date" name="joinDate"formControlName="joinDate" /><br>
+  Salary <input type="number" name="salary" formControlName="salary"/><br>
+  <input type="submit" value="Add User" name="save" [disabled]="!this.userForm.valid"/><br>
+</form>
+<table border="4">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Date of Joining</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.joinDate }}</td>
+      <td>{{ user.salary }}</td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,34 @@
+Reactjs notes
+
+npmjs.com - to get all the packages
+
+class tag/component - to perform one or more action
+
+functional tag/component - used to create functional tag which perform an only one action
+
+
+tag will have - definition,view,Region,boundary,functionality
+
+binding is in two ways - one way and two ways
+
+mv-vm = model view and view model architecture
+
+Assignment - project name,manager name, start date,
+
+7.10.23 
+
+of every HTML tag it get processed by loading -> updating -> unloading
+
+it loaded in stack , so it get unloaded the last tag first (LIFO)
+
+In React - mounting-->updating-->unmounting 
+
+Properties - its a another way to handle the data 
+
+props is a mechanism where two different tags can communicate each other by passing parameters
+
+props is not dynamic changable feilds but useState is 
+
+hooks introduced in 2016 its a new feature
+
+

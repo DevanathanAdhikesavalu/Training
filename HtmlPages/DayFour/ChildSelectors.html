@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Types of selectors</title>
+    </head>
+    <style>
+        div > u{
+            color:pink;
+        }
+        div > i:nth-child(){
+            color:cornflowerblue;
+        }
+    </style>
+    <body>
+        <u> underline 0 </u>
+        <div>
+            <p>This is first div<p><br>
+            <i>Sentence in Italics</i><br>
+            <i>Italics</i><br>
+            <i>Italics</i><br>
+            <u>Sentence with underline</u><br>
+            <u>Sentence2 which is underlined</u><br>
+            <p>
+                <b>Sentence In Bold</b><br>
+                <h1>Header 1</h1>
+            </p>
+            <h2>Header 2</h2><br>
+            <div>
+                <p>Vimal and harish are friends</p>
+            </div>
+        </div>
+        <i>  Sentence2 in Italics</i><br>
+        <h1>sentence 3 in Header</h1>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var divFirstChild = document.querySelector('div > *:first-child:not(div)');
+                divFirstChild.style.color = "rgb(192, 255, 2)";
+            });
+        </script>
+    </body>
+</html>

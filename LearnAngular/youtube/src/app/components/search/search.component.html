@@ -1,0 +1,45 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cover</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>
+            <img src="../../../assets/images/naruto-aestetic.jpg" height="100" width="100">
+        </td>
+        <td>Movie Title</td>
+        <td>Short Description of the movie</td>
+        <td>
+            <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-film"></i>Trailer</a>
+            <a class="btn btn-primary"><i class="bi bi-eye"></i>Details</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal Trailer</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/tA3yE4_t6SY?si=G6MIp1n1Nx1a6TkS&amp;controls=0" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>

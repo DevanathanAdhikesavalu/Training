@@ -1,0 +1,8 @@
+Expressjs notes
+
+Microservices - faster, independent exectution without dependency 
+
+it can communicate with other microservices by sending and receiving data
+
+microservices can provide API services(library of functions)
+

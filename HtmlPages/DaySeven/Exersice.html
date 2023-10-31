@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Elements</title>
+</head>
+<body>
+    <div id="container">
+       
+        <button id="addButton">Add Element</button>
+        <button id="removeButton">Remove Element</button>
+        <button id="replaceButton">Replace with Submit</button>
+    </div>
+   
+    <script>
+ 
+        function addElement() {
+            const container = document.getElementById('container');
+            const elementType = prompt("Enter element type (1 - text, 2 - checkbox, 3 - radio button, 4 - email, 5 - date):");
+           
+            if (elementType) {
+                let newElement;
+ 
+                switch (parseInt(elementType)) {
+                    case 1:
+                        newElement = document.createElement("input");
+                        newElement.type = "text";
+                        break;
+                    case 2:
+                        newElement = document.createElement("input");
+                        newElement.type = "checkbox";
+                        break;
+                    case 3:
+                        newElement = document.createElement("input");
+                        newElement.type = "radio";
+                        break;
+                    case 4:
+                        newElement = document.createElement("input");
+                        newElement.type = "email";
+                        break;
+                    case 5:
+                        newElement = document.createElement("input");
+                        newElement.type = "date";
+                        break;
+                    default:
+                        alert("Invalid input. Please enter a number between 1 and 5.");
+                        return;
+                }
+ 
+                container.appendChild(newElement);
+            }
+        }
+        function removeElement() {
+            const container = document.getElementById('container');
+            const lastElement = container.lastChild;
+           
+            if (lastElement) {
+                container.removeChild(lastElement);
+            }
+        }
+ 
+       
+        function replaceElement() {
+            const container = document.getElementById('container');
+            const lastElement = container.lastChild;
+           
+            if (lastElement) {
+                const submitButton = document.createElement("button");
+                submitButton.innerText = "Submit";
+                container.replaceChild(submitButton, lastElement);
+            }
+        }
+ 
+   
+        document.getElementById('addButton').addEventListener('click', addElement);
+        document.getElementById('removeButton').addEventListener('click', removeElement);
+        document.getElementById('replaceButton').addEventListener('click', replaceElement);
+    </script>
+</body>
+</html>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicates</title>
+</head>
+<body>
+    <h1>Remove Duplicates from an Array</h1>
+    <form>
+        <label for="inputArray">Enter elements (comma-separated):</label>
+        <input type="text" id="inputArray" placeholder="e.g., 1,2,3,3,4,4,5">
+        <br>
+        <input type="button" value="Remove Duplicates" onclick="removeDuplicates()">
+    </form>
+   
+    <h2>Original Array:</h2>
+    <pre id="originalArray"></pre>
+   
+    <h2>Array with Duplicates Removed:</h2>
+    <pre id="uniqueArray"></pre>
+   
+    <script>
+        function removeDuplicates() {
+            var inputArrayElement = document.getElementById("inputArray");
+            var inputArray = inputArrayElement.value.split(",").map(item => item.trim());
+           
+            // Create a Set to remove duplicates
+            var uniqueArray = Array.from(new Set(inputArray));
+           
+            // Display the original and unique arrays
+            document.getElementById("originalArray").textContent = JSON.stringify(inputArray, null, 2);
+            document.getElementById("uniqueArray").textContent = JSON.stringify(uniqueArray, null, 2);
+        }
+    </script>
+</body>
+</html>

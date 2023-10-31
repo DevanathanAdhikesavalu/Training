@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" novalidate onreset="return confirmReset()">
+
+        <div class="center"><b>User Information</b></div>
+
+        <label for="Employeeid">Employee ID</label>
+        <input type="text" name="Employeeid"  /><br>
+
+        <label for="fname">First Name</label>
+        <input type="text" onfocus="clearNameError()" onblur="checkFirstName()"  name="firstname" placeholder="Enter your name" required minlength="5" maxlength="10" />
+
+        <div class="error" id="nameError"></div><br>
+
+        <label>Age</label>
+        <input type="number" name="age" required min="18" max="60" onfocus="clearAgeError()" onblur="CheckAge()" />
+        <div class="error" id="ageError"></div>
+        <label>Date of Birth</label>
+        <input type="date" name="dob"><br>
+        <label for="volume">Preferred Volume</label>
+        <input type="range" min="10" max="10000" onchange="updateVolume()" name="volume" />
+        <input type="text" name="vollevel" style="width: 60px;height: 15px;" readonly /><br><br>
+        <label>Date Of Joining</label>
+        <input type="date" name="joindate" min="1998-03-31" max="2023-09-26" /><br>
+        <label>Upload your resume</label>
+        <input type="file" name="resume" accept="audio/mp3,video/mp4,video/mpeg,application/pdf" /><br>
+        <label>Email ID</label>
+        <input type="email" placeholder="Enter your Email ID" name="emailID" minlength="6" /><br>
+        <div style="left: 100px;"><input type="checkbox" name="saveStatus" onclick="enableSave()"/>Agree to terms and conditions<br><br></div>
+        <input type="submit" value="Save" id="save" disabled/>&nbsp;&nbsp;
+        <input type="reset" value="Reset" />
+    </form>
+
+    <script>
+        function clearNameError(){
+            document.getElementById("nameError").innerHTML="";
+        }
+        function clearAgeError(){
+            document.getElementById("ageError").innerHTML="";
+        }
+        function checkFirstName(){
+            var fname = document.forms[0].firstname.value;
+            if(fname==""){
+                //window.alert(" First name is mandatory");
+                var nerror = document.getElementById("nameError");
+                nerror.style.fontWeight="bold";
+                nerror.style.fontStyle="italic";
+                nerror.innerHTML="First name is mandatory";
+                //document.forms[0].firstname.focus(); //focus() - to make the firstname field active
+            }
+        }
+        function updateVolume(){
+            document.forms[0].vollevel.value=
+            document.forms[0].volume.value+"%";
+        }
+        function CheckAge(){
+            var empAge = document.forms[0].age.value;
+            if(empAge==""){
+                //window.alert(" Emp age is mandatory");
+                var empAgeError = document.getElementById("ageError")
+                empAgeError.style.fontWeight="bold";
+                empAgeError.style.fontStyle="italic";
+                empAgeError.innerHTML="Emp age is mandatory";
+               // document.forms[0].firstname.focus(); //focus() - to make the firstname field active
+            }
+        }
+        function confirmReset(){
+            var status = confirm("Want to reset and lose the data ?");
+            console.log(status);
+            return status;
+        }
+        function enableSave(){
+            var v = document.getElementByName("saveStatus");
+            var checkstate=v[0].checked;
+            document.getElementById("save").disabled=checkstate;
+        }
+    </script>  
+</body>
+</html>

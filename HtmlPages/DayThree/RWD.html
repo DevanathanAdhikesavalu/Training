@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Session Storage</title>
+</head>
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<style>
+    @media only screen and (max-width:300px){
+        img{
+            width: 90%;
+        }
+    }
+    @media only screen and (max-width:500px){
+        img{
+            width: 90%;
+        }
+    }
+    @media only screen and (max-width:10000px){
+        img{width: 95%;}
+    }
+</style>
+    <center>
+    <b>User information</b><br><br>
+    <img src="ImageFolder/Chandrayaan.jpg" alt="Satillite image showing"/>
+    <form action="#" >
+        <label> EmployeeID</label>
+        <input type="text" name="employeeID" value="100"/>
+        <br><br>
+        <label for="fname">First name</label>
+        <input type="text" name="firstname" placeholder="Enter your name" required maxlength="30" minlength="5" />
+        <br><br>
+        <label>Age</label>
+        <input type="number" min="18" max="60" name="empAge" size="20"/>
+        <br><br>
+        <fieldset>
+            <legend>Select Gender</legend><br>
+            <input type="radio" name="Gender" value="Male"/>Male &nbsp;&nbsp;
+            <input type="radio" name="Gender" value="Female"/>FeMale<br>
+        </fieldset><br><br>
+        <fieldset>
+            <legend>Hobbies</legend>
+            <input type="checkbox" name="Hobbies" value="Cricket"/>Cricket<br>
+            <input type="checkbox" name="Hobbies" value="Music"/>Music<br>
+            <input type="checkbox" name="Hobbies" value="Football"/>Football<br>
+        </fieldset>
+        <input type="submit" onclick="saveData()" name="Save" />&nbsp;&nbsp; 
+        <input type="reset" value="reset"/>
+    </form>
+    </center>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //assoiciative arrays
+    var dict=[];
+    dict["India"]="New Delhi";//india usa and japan are keys.
+    dict["USA"]="Washington";//new delhi washington tokyo are values
+    dict["Japan"]="Tokyo";
+    document.writeln(dict["India"]+"<br>");
+    document.writeln(dict["Japan"]+"<br>");
+    document.writeln(dict.USA+"<br>");
+    var obj=new Object();
+    obj.empID=100;
+    obj.firstname="Harish";
+    obj.lastname="V";
+    document.writeln(obj.empID+"&nbsp:"+obj.firstname);
+    document.writeln("<br>"+obj["firstname"]+"&nbsp :"+obj["lastname"]);
+    obj.getFirstName=function(){return  this.firstname}
+    obj.getLastName=function(){return this.lastname}
+    document.writeln("<BR>First Name : " + obj.getFirstName());
+    document.writeln("<br>Last Name : " + obj.getLastName());
+</script>
+<body>
+</body>
+</html>

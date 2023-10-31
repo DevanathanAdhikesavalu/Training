@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Types of selectors</title>
+    </head>
+    <body>
+        <style>
+            #grid1{
+                display:grid;
+                grid-template-rows: 110px 110px 110px;
+                grid-template-columns: 110px 110px 110px;
+                grid-gap:4px;
+                grid-auto-flow:column;
+            }
+        </style>
+        <div id="grid1">
+            <div style="width: 100px;height: 100px;background-color: brown;">div1</div>
+            <div style="width: 100px;height: 100px;background-color: rgb(14, 202, 114);">div2</div>
+            <div style="width: 100px;height: 100px;background-color: rgb(35, 6, 224);">div3</div>
+            <div style="width: 100px;height: 100px;background-color: rgb(14, 202, 114);">div4</div>
+            <div style="width: 100px;height: 100px;background-color: rgb(238, 125, 4);">div5</div>
+            <input type="button" value="click"/>
+            <input type="button" value="click"/>
+            <input type="text" value="Enter name"/>
+            <input type="submit" value="Add" placeholder="Enter name"/>
+
+        </div>
+    </body>
+</html>

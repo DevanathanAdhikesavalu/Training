@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form #feedbackForm="ngForm" (ngSubmit)="submitFeedback(uData)">
+                <legend>Drop your Feedback here</legend>
+                <hr>
+                <div class="mb-3">
+                    <label for="emailAddress" class="form-label">EmailAddress</label>
+                    <input 
+                    type="email" 
+                    name="emailAddress" 
+                    class="form-control" 
+                    id="emailAddress"
+                    placeholder="Your Email EmailAddress" 
+                    [(ngModel)]="emailAddress"/>
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input 
+                    type="text" 
+                    name="phoneNumber" 
+                    class="form-control" 
+                    id="phoneNumber"
+                    placeholder="Your phoneNumber"
+                    [(ngModel)]="phoneNumber" />
+                </div>
+                <div class="mb-3">
+                    <label for="rate" class="form-label">Rate Us</label>
+                    <input 
+                    type="range" 
+                    min="0"
+                    max="10"
+                    step="1"
+                    name="rate" 
+                    class="form-range" 
+                    id="rate" 
+                    [(ngModel)]="rate"/>
+                </div>
+                <label class="form-label">Rate :{{rate}}</label>
+                <div class="mb-3">
+                    <label for="feedbackTitle" class="form-label">Feedback Subject</label>
+                    <input 
+                    type="text" 
+                    name="feedbackTitle" 
+                    class="form-control" 
+                    id="feedbackTitle"
+                    placeholder="Your feedbackTitle" 
+                    [(ngModel)]="feedbackTitle"/>
+                </div>
+                <div class="mb-3">
+                    <label for="feedback" class="form-label">Feedback</label>
+                    <input 
+                    type="text" 
+                    name="feedback" 
+                    class="form-control" 
+                    id="feedback"
+                    placeholder="Your feedback " 
+                    [(ngModel)]="feedback"/>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary"> 
+                    <i class="bi bi-send"></i> Submit Feedback </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+b{
+    border:5px;
+    border-style: dashed;
+    border-color: blueViolet;
+}
+
+div{
+    width:50opx;
+    height:400px;
+    color:brown;
+    border-style: dashed ;
+}
